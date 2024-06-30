@@ -1,0 +1,93 @@
+package Deberes;
+
+import java.util.Scanner;
+
+public class CalculoDeFonasa {
+
+	public static void main(String[] args) {
+		
+	
+	Scanner lector = new Scanner(System.in);
+		
+		int opcion = 0;
+		
+	do {
+		System.out.println("1	=	FONASA");
+		System.out.println("2	=	IRPF");
+		System.out.println("3	=	IASS");
+		System.out.println("4	=	Declaración jurada anual");
+		System.out.println("5	=	Salir");
+		System.out.println("Ingresa el número de la acción que quieras hacer");
+		opcion = lector.nextInt();
+	
+		switch (opcion) { 
+		case 1:
+			System.out.println("Desde ahora, responde con ´true´ o ´false´");
+			System.out.println("¿Estas casado/a?");
+			boolean casado = lector.nextBoolean();
+			System.out.println("¿Tienes hijos?");
+			boolean hijos = lector.nextBoolean();
+			System.out.println("Ingrese en pesos, su sueldo en un mes");
+			int sueldo = lector.nextInt();
+				if (casado == false && hijos == false && sueldo <= 15442)
+			System.out.println("FONASA: "+ (sueldo * 0.03));
+				else if (casado == false && hijos == true && sueldo <= 15442)
+					System.out.println("FONASA: "+ (sueldo * 0.03));
+				else if (casado == true && hijos == false && sueldo <= 15442)
+					System.out.println("FONASA: "+ (sueldo * 0.05));
+				else if (casado == true && hijos == true && sueldo < 15442)
+					System.out.println("FONASA: "+ (sueldo * 0.05));
+				
+				else if (casado == true && hijos == false && sueldo > 15442)
+					System.out.println("FONASA: "+ (sueldo * 0.065 ));
+				else if (casado == true && hijos == true && sueldo > 15442)
+					System.out.println("FONASA: "+ (sueldo * 0.08)); 
+				else if (casado == false && hijos == true && sueldo > 15442)
+					System.out.println("FONASA: "+ (sueldo * 0.045));    
+				else if (casado == false && hijos == false && sueldo > 15442)
+					System.out.println("FONASA: "+ (sueldo * 0.06));
+			break;
+		case 2:
+			
+	        double bpc = 6177;
+	        double tramo1 = (bpc * 7);
+	        double tramo2 = (bpc * 10);
+	        double tramo3 = (15 * bpc);
+	        double tramo4 = (30 * bpc);
+	        double tramo5 = (50 * bpc);
+	        double tramo6 = (75 * bpc);
+	        double tramo7 = (115 * bpc);
+
+	        System.out.print("Ingrese sus ingresos mensuales en pesos: ");
+	        double ingresosMensuales = lector.nextDouble();
+
+	        double ingresosNetosMensuales = ingresosMensuales;
+
+	        double irpfMensual = 0;
+
+	        if (ingresosNetosMensuales <= 43239) {
+	            irpfMensual = 0;
+	        } else if (ingresosNetosMensuales <= tramo2) {
+	            irpfMensual = (ingresosNetosMensuales - tramo1) * 0.10;
+	        } else if (ingresosNetosMensuales <= tramo3) {
+	            irpfMensual = (tramo2 - tramo1) * 0.10 + (ingresosNetosMensuales - tramo2) * 0.15;
+	        } else if (ingresosNetosMensuales <= tramo4) {
+	            irpfMensual = (tramo2 - tramo1) * 0.10 + (tramo3 - tramo2) * 0.15 + (ingresosNetosMensuales - tramo3) * 0.24;
+	        } else if (ingresosNetosMensuales <= tramo5) {
+	            irpfMensual = (tramo2 - tramo1) * 0.10 + (tramo3 - tramo2) * 0.15 + (tramo4 - tramo3) * 0.24 + (ingresosNetosMensuales - tramo4) * 0.25;
+	        } else if (ingresosNetosMensuales <= tramo6) {
+	            irpfMensual = (tramo2 - tramo1) * 0.10 + (tramo3 - tramo2) * 0.15 + (tramo4 - tramo3) * 0.24 + (tramo5 - tramo4) * 0.25 + (ingresosNetosMensuales - tramo5) * 0.27;
+	        } else if (ingresosNetosMensuales <= tramo7) {
+	            irpfMensual = (tramo2 - tramo1) * 0.10 + (tramo3 - tramo2) * 0.15 + (tramo4 - tramo3) * 0.24 + (tramo5 - tramo4) * 0.25 + (tramo6 - tramo5) * 0.27 + (ingresosNetosMensuales - tramo6) * 0.31;
+	        }else if (ingresosNetosMensuales >= tramo7) {
+	           irpfMensual = (tramo2 - tramo1) * 0.10 + (tramo3 - tramo2) * 0.15 + (tramo4 - tramo3) * 0.24 + (tramo5 - tramo4) * 0.25 + (tramo6 - tramo5) * 0.27 + (ingresosNetosMensuales - tramo6) * 0.31 + (tramo7 - tramo6) * 0.36;
+	        }
+
+	        System.out.println("IRPF mensual: " + irpfMensual);
+			}
+				
+	}while (opcion != 5);
+	
+	}
+}
+
