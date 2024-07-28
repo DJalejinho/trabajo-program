@@ -84,8 +84,135 @@ public class CalculoDeFonasa {
 	        }
 
 	        System.out.println("IRPF mensual: " + irpfMensual);
+	        break;
+		case 3:
+			
+			double bpc1 = 6177;
+			
+	        double tramo11 = (bpc1 * 9);
+
+	        double tramo22 = (bpc1 * 15);
+
+	        double tramo33 = (50 * bpc1);
+
+
+	        System.out.print("Ingrese sus ingresos mensuales en pesos: ");
+
+
+
+	        double ingresosMensuales1 = lector.nextDouble();
+
+	        double ingresosNetosMensuales1 = ingresosMensuales1;
+
+	        double iassMensual = 0;
+
+	        if (ingresosNetosMensuales1 <= 43239) {
+
+	            iassMensual = 0;
+
+	        } else if (ingresosNetosMensuales1 <= tramo22) {
+
+	            iassMensual = (ingresosNetosMensuales1 - tramo11) * 0.8;
+
+	        } else if (ingresosNetosMensuales1 <= tramo22) {
+
+	            iassMensual = (tramo22 - tramo11) * 0.8 + (tramo33 - tramo22) * 0.24;
+
+	        } else if (ingresosNetosMensuales1 >= tramo33) {
+
+	            iassMensual = (tramo22 - tramo11) * 0.8 + (tramo33 - ingresosNetosMensuales1) * 0.30;
+
+	        }
+
+	        System.out.println("IASS mensual: " + iassMensual);
 			}
-				
+				break;
+		case 4:
+				  	
+					System.out.println("Ingrese su nombre");
+			    	String nombre = lector.nextLine();
+			        
+			        System.out.println("Ingresa tu apellido:");
+			        String apellido = lector.nextLine();
+			        
+			        System.out.println("Ingresa tu cedula:");
+			    	int cedula = lector.nextInt();
+			    	
+			    	System.out.println("Ingresa tu edad:");
+			    	int edad = lector.nextInt();
+			    	
+			    	System.out.println("Ingresa tus ingresos de enero:");
+			    	double ene = lector.nextInt();
+			    	
+			    	System.out.println("Ingresa tus ingresos de febrero:");
+			    	double feb = lector.nextInt();
+			    	
+			    	System.out.println("Ingresa tus ingresos de marzo:");
+			    	double may = lector.nextInt();
+			    	
+			    	System.out.println("Ingresa tus ingresos de abril:");
+			    	double abr = lector.nextInt();
+			    	
+			    	System.out.println("Ingresa tus ingresos de Mayo:");
+			    	double mar = lector.nextInt();
+			    	
+			    	System.out.println("Ingresa tus ingresos de junio:");
+			    	double jun = lector.nextInt();
+			    	
+			    	System.out.println("Ingresa tus ingresos de julio:");
+			    	double jul = lector.nextInt();
+			    	
+			    	System.out.println("Ingresa tus ingresos de agosto:");
+			    	double ago = lector.nextInt();
+			    	
+			    	System.out.println("Ingresa tus ingresos de septiembre:");
+			    	double sep = lector.nextInt();
+			    	
+			    	System.out.println("Ingresa tus ingresos de octubre:");
+			    	double oct = lector.nextInt();
+			    	
+			    	System.out.println("Ingresa tus ingresos de noviembre:");
+			    	double nov = lector.nextInt();
+			    	
+			    	System.out.println("Ingresa tus ingresos de diciembre:");
+			    	double dic = lector.nextInt();
+			    	
+			    	
+			    	System.out.println("-----------------------------------------------------");
+			    	System.out.println("El nombre es: "+nombre);
+			    	System.out.println("-----------------------------------------------------");
+			    	System.out.println("El apellido es: "+apellido);
+			    	System.out.println("-----------------------------------------------------");
+			    	System.out.println("La cedula es: "+cedula);
+			    	System.out.println("-----------------------------------------------------");
+			    	System.out.println("La edad es: "+edad);
+			    	System.out.println("-----------------------------------------------------");
+			    	System.out.println("Su ingreso de enero es: "+ene);
+			    	System.out.println("-----------------------------------------------------");
+			    	System.out.println("Su ingreso de enero es: "+feb);
+			    	System.out.println("-----------------------------------------------------");
+			    	System.out.println("Su ingreso de enero es: "+mar);
+			    	System.out.println("-----------------------------------------------------");
+			    	System.out.println("Su ingreso de enero es: "+may);
+			    	System.out.println("-----------------------------------------------------");
+			    	System.out.println("Su ingreso de enero es: "+abr);
+			    	System.out.println("-----------------------------------------------------");
+			    	System.out.println("Su ingreso de enero es: "+jun);
+			    	System.out.println("-----------------------------------------------------");
+			    	System.out.println("Su ingreso de enero es: "+jul);
+			    	System.out.println("-----------------------------------------------------");
+			    	System.out.println("Su ingreso de enero es: "+ago);
+			    	System.out.println("-----------------------------------------------------");
+			    	System.out.println("Su ingreso de enero es: "+sep);
+			    	System.out.println("-----------------------------------------------------");
+			    	System.out.println("Su ingreso de enero es: "+oct);
+			    	System.out.println("-----------------------------------------------------");
+			    	System.out.println("Su ingreso de enero es: "+nov);
+			    	System.out.println("-----------------------------------------------------");
+			    	System.out.println("Su ingreso de enero es: "+dic);
+			    	System.out.println("-----------------------------------------------------");
+			
+			
 	}while (opcion != 5);
 	
 	}
